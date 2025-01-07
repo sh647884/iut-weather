@@ -1,0 +1,74 @@
+.custom-input {
+    border: 2px solid #007bff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.custom-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #218838;
+}
+
+.city-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+.city-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.city-button:hover {
+    background-color: #0056b3;
+}
+
+.star-container {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.star-container svg {
+    fill: #666;
+    transition: all 0.3s ease;
+}
+
+.star-container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.star-container svg:hover {
+    transform: scale(1.1);
+}
+
+.star-container input:checked ~ svg {
+    fill: #ffeb49;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
