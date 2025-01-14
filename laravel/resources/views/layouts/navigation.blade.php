@@ -29,7 +29,7 @@
 
                     <!-- Favorite Link -->
                     <x-nav-link :href="route('weather.favoriteCity')" :active="request()->routeIs('weather.favoriteCity')">
-                        {{ __('⭐ Favorite City') }}
+                        {{ $favoriteCityName ? "⭐ {$favoriteCityName}" : __('Favorite City') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -100,7 +100,7 @@
 
             <!-- Favorite Link -->
             <x-responsive-nav-link :href="route('weather.favoriteCity')" :active="request()->routeIs('weather.favoriteCity')">
-                {{ __('⭐ Favorite City') }}
+                {{ $favoriteCityName ? "⭐ {$favoriteCityName}" : __('Favorite City') }}
             </x-responsive-nav-link>
         </div>
 
