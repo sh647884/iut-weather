@@ -31,6 +31,7 @@ Route::get('/weather/export', [WeatherController::class, 'export'])->name('weath
 Route::post('/weather/favorite', [WeatherController::class, 'markFavorite'])->name('weather.favorite');
 Route::post('/weather/unset-favorite', [WeatherController::class, 'unsetFavorite'])->name('weather.unsetFavorite');
 Route::get('/weather/favorite', [WeatherController::class, 'favoriteCity'])->name('weather.favoriteCity');
-
+Route::post('/weather/enable-emails', [WeatherController::class, 'enableEmails'])->name('weather.enableEmails');
+Route::post('/weather/disable-emails', [WeatherController::class, 'disableEmails'])->name('weather.disableEmails');
 
 require __DIR__.'/auth.php';

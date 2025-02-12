@@ -36,6 +36,15 @@
                                             </svg>
                                         </form>
                                     </label>
+                                    <label class="email-container">
+                                        <form method="POST" action="{{ $place->send_forecast ? route('weather.disableEmails') : route('weather.enableEmails') }}">
+                                            @csrf
+                                            <input type="hidden" name="city" value="{{ $place->place }}">
+                                            <button type="submit" class="email-button">
+                                                {{ $place->send_forecast ? 'Disable Emails' : 'Enable Emails' }}
+                                            </button>
+                                        </form>
+                                    </label>
                                 </div>
                             @endforeach
                         </div>

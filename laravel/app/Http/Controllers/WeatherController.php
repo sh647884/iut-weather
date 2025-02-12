@@ -157,4 +157,28 @@ class WeatherController extends Controller
 
         return back()->with('success', 'City removed from your list.');
     }
+
+    public function enableEmails(Request $request)
+    {
+        $user = auth()->user();
+        $city = $request->input('city');
+
+        $place = $user->places()->where('place', $city)->firstOrFail();
+        $place->send_forecast = true;
+        $place->save();
+
+        return redirect()->route('weather.myCities')->with('success', 'Email notifications enabled for ' . $city);
+    }
+
+    public function disableEmails(Request $request)
+    {
+        $user = auth()->user();
+        $city = $request->input('city');
+
+        $place = $user->places()->where('place', $city)->firstOrFail();
+        $place->send_forecast = false;
+        $place->save();
+
+        return redirect()->route('weather.myCities')->with('success', 'Email notifications disabled for ' . $city);
+    }
 }
